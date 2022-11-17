@@ -6,17 +6,19 @@ import rigoImage from "../../img/rigo-baby.jpg";
 //create your first component
 const Home = () => {
 
-	const [selectedColor, setColor] = useState("red");
-
+	const [ selectedColor, setColor ] = useState("");
+	console.log(selectedColor);
+  
 	return (
-		<div id="trafficTop">
-			<div id="container">
-				<div class={"red light"+((selectedColor === "red") ? "selected" : "" )} onClick={() => setColor('red')}></div>
-				<div class={"yellow light"+((selectedColor === "yellow") ? "selected" : "" )} onClick={() => setColor('yellow')}></div>
-				<div class={"green light"+((selectedColor === "green") ? "selected" : "" )} onClick={() => setColor('green')}></div>
-			</div>
-		</div>
+	<div>
+	<div id="trafficTop"></div>
+	<div id="container">
+		<div onClick={() => setColor("red")} class={"light red"+((selectedColor === "red") ? " selected" : "" )}></div>
+		<div onClick={() => setColor("yellow")} class={"light yellow"+((selectedColor === "yellow") ? " selected" : "" )}></div>
+		<div onClick={() => setColor("green")} class={"light green"+((selectedColor === "green") ? " selected" : "" )}></div>
+	</div>
+	</div>
 	);
-};
-
+  };
+  
 export default Home;
